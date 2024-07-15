@@ -1,0 +1,85 @@
+@import "../../responsive.scss"; 
+.searchbar{
+    .type{
+        button{
+            padding:16px 36px;
+            text-transform: capitalize;
+            cursor: pointer;
+            background-color: white;
+            border:1px solid #999;
+            border-bottom: none;
+            @include sm{
+                padding:13px 25px;
+            }
+        &.active{
+            background-color: black;
+            color:white;
+        }
+        &:first-child{
+            border-top-left-radius: 5px;
+            border-right: none;
+   
+        }
+        &:last-child{
+            border-top-right-radius: 5px;
+            border-left: none;
+            
+        }
+    }
+    }
+    form{
+        border:1px solid #999;
+         display: flex;
+         justify-content: space-between;
+         height:44px;
+         gap:5px;
+         @include sm{
+            flex-direction: column;
+            border:none;
+         }
+         input{
+            border:none;
+            padding:0px 10px;
+            width:130px;
+            @include lg{
+                padding: 0 5px;
+                &:nth-child(2),&:nth-child(3){
+                    width:90px;
+                }
+            }
+            @include md{
+                width: 140px;
+                &:nth-child(2),&:nth-child(3){
+                    width:140px;
+                }
+            }
+            @include sm{
+                width: auto;
+                &:nth-child(2),&:nth-child(3){
+                    width:auto;
+                }
+                padding:10px;
+                border:1px solid #999;
+            }
+         }
+         a{
+      flex: 1;
+      background-color: #fece51;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+         button{
+            border:none;
+            cursor: pointer;
+            background-color: #fece51;
+            @include sm{
+                padding: 5px;
+            }
+             img{
+                width:24px;
+                height:24px;
+             }
+            }
+         }
+    }
+}
