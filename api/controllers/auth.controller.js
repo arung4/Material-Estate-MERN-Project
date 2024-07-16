@@ -38,11 +38,11 @@ export const login = async (req,res)=>{
             where:{username}
         })
         // IF USER NOT PRESENT
-        if(!user) res.status(400).json({message:"Invalid Credentials !"})
+        if(!user) return res.status(400).json({message:"Invalid Credentials !"})
 
         // CHECK IF THE PASSWORD IS CORRECT
        const isPassword= await bcrypt.compare(password,user.password); 
-       if(!isPassword) res.status(400).json({message:"Invalid Credentials !"})
+       if(!isPassword) return res.status(400).json({message:"Invalid Credentials !"})
         
      
         // GENERATE COOKIE TOKEN AND SENT TO THE USER
@@ -57,7 +57,7 @@ export const login = async (req,res)=>{
         const {password: userPassword, ...userInfo}=user;
         res.cookie("token", token,{
             httpOnly:true,
-            // secure:ture make it as true while deployment 
+            // secure:true,
             maxAge:age
         }).status(200).json(userInfo)
     }catch(err){

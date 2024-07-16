@@ -16,7 +16,8 @@ export const getPosts = async (req, res) => {
             city:  query.city?.trim() || undefined,// Trim spaces
             type: query.type || undefined,
             property: query.property || undefined,
-            bedroom:parseInt(query.bedroom) || undefined,
+            bedroom: { gte: parseInt(query.bedroom) || undefined,
+            },
             price: {
                 gte:  parseInt(query.minPrice) || undefined,
                 lte:  parseInt(query.maxPrice) || undefined,
@@ -68,7 +69,7 @@ export const getPost = async (req, res) => {
         }
       });
     }
-    res.status(200).json({ ...post, isSaved: false });
+    // res.status(200).json({ ...post, isSaved: false });
 
   } catch (err) {
     console.log(err);
@@ -81,7 +82,7 @@ export const getPost = async (req, res) => {
 export const addPost = async (req, res) => {
   const body = req.body;
   const tokenUserId = req.userId;
-
+ 
   try {
     const newPost = await prisma.post.create({
       data: {
@@ -92,9 +93,9 @@ export const addPost = async (req, res) => {
         }
       },
     });
-    if(newPost){
-      return  res.status(200).json(newPost);
-    }
+
+    res.status(200).json(newPost);
+ 
   } catch (err) {
     console.log(err);
       res.status(500).json({ message: "Failed to create post" });

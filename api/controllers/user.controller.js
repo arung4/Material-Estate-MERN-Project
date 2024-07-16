@@ -111,9 +111,8 @@ export const savePost = async (req, res) => {
         res.status(200).json({ message: "Post saved" });
       }
     } catch (err) {
-      if (err.code === 'P2002') {
-        res.status(400).json({ message: "Post is already saved" });
-      } else  res.status(500).json({ message: "Failed to save post!" });
+       console.log(err);
+       res.status(500).json({message:"Failed to delete users!"});
     }
   };
 

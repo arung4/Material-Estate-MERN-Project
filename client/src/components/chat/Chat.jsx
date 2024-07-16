@@ -81,7 +81,7 @@ export default function Chat({chats}) {
         }
         // CLEAN UP FUNC TO PREVENT RE-RENDERING  
         return () => {
-          socket.off("getMessage");
+          // socket.off("getMessage");
         };
       }, [socket, chat]);
 
@@ -89,8 +89,8 @@ export default function Chat({chats}) {
     <div className='chat'>
       <div className="messages">
         <h1>Messages</h1>
-        {
-            chats.map(c=>(
+        {    
+            chats?.map((c)=>(
                 <div className="message" key={c.id}
                 style={{
                     backgroundColor:
@@ -106,11 +106,8 @@ export default function Chat({chats}) {
               </div>
             ))
         }
-       
-        
       </div>
 
-    {/* Chat Box */}
 
      { chat && (<div className="chatBox">
         <div className="top">

@@ -14,6 +14,8 @@ export default function SinglePage() {
   console.log(post)
     
   const navigate=useNavigate();
+
+  
   const handleSave= async()=>{
     if(!currentUser){
       navigate("/login");

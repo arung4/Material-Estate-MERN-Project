@@ -8,6 +8,7 @@ import { AuthContext } from '../../../context/AuthContext.jsx'
 
 export default function Profile() {
    const data = useLoaderData();
+   console.log(data)
    const{updateUser, currentUser}=useContext(AuthContext)
    const navigate=useNavigate()
    
@@ -81,7 +82,9 @@ export default function Profile() {
               resolve={data.chatResponse}
               errorElement={<p>Error loading chats!</p>}
             >
-              {(chatResponse) => <Chat chats={chatResponse.data}/>}
+              {(chatResponse) =>
+       <Chat chats={chatResponse.data} />
+    }
             </Await>
           </Suspense>
       </div>
