@@ -10,9 +10,10 @@ import {AuthContext} from "../../../context/AuthContext.jsx"
 export default function SinglePage() {
   const post = useLoaderData()
   const [saved, setSaved] = useState(post.isSaved);
+  const [send, setSend]=useState(false);
   const {currentUser}= useContext(AuthContext);
   console.log(post)
-    
+  
   const navigate=useNavigate();
 
   
@@ -27,6 +28,26 @@ export default function SinglePage() {
     }catch(err){
       console.log(err)
       setSaved((prev) => !prev);
+    }
+  }
+   
+  const handleHiMessage = async () => {
+    if (!currentUser) {
+      navigate("/login");
+    }
+    try {
+      const res = await apiRequest.post("/chats", { receiverId: post.userId });
+      const chatId = res.data.id;
+      console.log(chatId);
+ 
+      // Send the initial "hello" message
+      await apiRequest.post(`/messages/${chatId}`, { text: "Hi" });
+
+      // Optionally, navigate to the chat view
+      setSend(!send);
+      // navigate("/profile");
+    } catch (err) {
+      console.log(err);
     }
   }
    
@@ -143,10 +164,15 @@ export default function SinglePage() {
           <div className="mapContainer">
             <Map items={[post]} />
           </div>
-          <div className="buttons">
-            <button>
+          <div  className="buttons"
+          >
+            <button onClick={handleHiMessage}
+             style={{
+              backgroundColor: send ? "#fece51" : "white",
+            }}
+            >
               <img src="/chat.png" alt="" />
-              Send a Message
+              {send ? "Message sent" : "Send the message"}
             </button>
             <button onClick={handleSave}
              style={{
