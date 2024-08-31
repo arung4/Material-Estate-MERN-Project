@@ -1,0 +1,98 @@
+// src/styles/About.scss
+
+.about-container {
+    padding: 40px;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    display: flex;
+    height:100%;
+    flex-direction: column;
+     scroll-behavior: smooth;
+    
+    h1 {
+      font-size: 36px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 20px;
+    }
+  
+    p {
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      color: #666;
+    }
+  
+    .founder-info {
+      display: flex;
+      align-items: center;
+      background-color: #fcf5f3;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+      .founder-image {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin-right: 20px;
+        border: 3px solid #eaeaea;
+      }
+  
+      .description {
+        max-width: 600px;
+      }
+    }
+  
+    .mission {
+      margin-top: 30px;
+      background-color: #fcf5f3;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+      h2 {
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 10px;
+      }
+  
+      p {
+        color: #666;
+        text-align: justify;
+      }
+    }
+    //footer 
+    .footer {
+      // width:100vw;
+      // overflow-x: hidden;
+      margin-top: 30px;
+      display: flex; /* Display the footer as a flex container */
+      justify-content: space-between; /* Space between left and right sections */
+      align-items: center; /* Center the items vertically */
+      padding: 20px; /* Padding around the footer */
+      background-color: #f8f9fa; /* Light background color */
+      border-top: 1px solid #e1e1e1; /* Subtle top border */
+      font-size: 14px; /* Font size for text */
+      color: #6c757d; /* Light grey color for text */
+    }
+    
+    .footer-left,
+    .footer-right {
+      display: flex; /* Flexbox for both sections */
+      gap: 15px; /* Spacing between the links */
+    }
+    
+    .footer-left a,
+    .footer-right a {
+      color: #6c757d; /* Link color */
+      text-decoration: none; /* Remove underline */
+      transition: color 0.3s; /* Smooth transition for hover effect */
+    }
+    
+    .footer-left a:hover,
+    .footer-right a:hover {
+      color: #333; /* Darker color on hover */
+    }
+  }
+  

@@ -2,6 +2,24 @@ import { Link } from "react-router-dom";
 import "./Card.scss";
 
 export default function Card({ item }) {
+
+
+// Function to format the price based on the type of post
+const formatPrice = () => {
+  if (item.type === "rent") {
+    return item.price >= 1000 ? (item.price / 1000).toFixed(1) + "k/month" : item.price + "/month";
+  } else {
+     // For buy type
+  if (item.price >= 10000000) {
+    // If price is 1 crore or more
+    return (item.price / 10000000).toFixed(2) + " Cr";
+  } else {
+    // If price is less than 1 crore (in lakhs)
+    return (item.price / 100000).toFixed(2) + " lakh";
+  }
+  }
+};
+
   return (
     <div className="card">
       <Link to={`/${item.id}`} className="imageContainer">
@@ -15,7 +33,7 @@ export default function Card({ item }) {
           <img src="/pin.png" alt="" />
           <span>{item.address}</span>
         </p>
-        <p className="price">$ {item.price}</p>
+        <p className="price"> {formatPrice()}</p>
         <div className="bottom">
           <div className="features">
             <div className="feature">

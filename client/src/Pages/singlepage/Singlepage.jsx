@@ -50,7 +50,21 @@ export default function SinglePage() {
       console.log(err);
     }
   }
-   
+    // Function to format the price based on the type of post
+  const formatPrice = () => {
+    if (post.type === "rent") {
+      return post.price >= 1000 ? (post.price / 1000).toFixed(1) + "k/month" : post.price + "/month";
+    } else {
+       // For buy type
+    if (post.price >= 10000000) {
+      // If price is 1 crore or more
+      return (post.price / 10000000).toFixed(2) + " Cr";
+    } else {
+      // If price is less than 1 crore (in lakhs)
+      return (post.price / 100000).toFixed(2) + " lakh";
+    }
+    }
+  };
 
   return (
     <div className="singlePage">
@@ -65,7 +79,7 @@ export default function SinglePage() {
                   <img src="/pin.png" alt="" />
                   <span>{post.address}</span>
                 </div>
-                <div className="price">$ {post.price}</div>
+                <div className="price">{formatPrice()}</div>
               </div>
               <div className="user">
                 <img src={post.user.avatar} alt="" />
@@ -149,14 +163,24 @@ export default function SinglePage() {
               <img src="/pet.png" alt="" />
               <div className="featureText">
                 <span>Bus Stop</span>
-                <p>{post.postDetail.bus}m away</p>
+                <p>
+                  {post.postDetail.bus > 999
+                    ? post.postDetail.bus / 1000 + "km"
+                    : post.postDetail.bus + "m"}{" "}
+                  away
+                </p>
               </div>
             </div>
             <div className="feature">
               <img src="/fee.png" alt="" />
               <div className="featureText">
                 <span>Restaurant</span>
-                <p>{post.postDetail.restaurant}m away</p>
+                <p>
+                {post.postDetail.restaurant > 999
+                    ? post.postDetail.restaurant / 1000 + "km"
+                    : post.postDetail.restaurant + "m"}{" "}
+                  away
+                </p>
               </div>
             </div>
           </div>

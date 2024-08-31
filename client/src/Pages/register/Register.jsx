@@ -15,9 +15,11 @@ export default function Register() {
         setError("")
         const formData= new FormData(e.target);
 
-       const username=formData.get("username")
+       const username=formData.get("username").trim()
        const email=formData.get("email")
        const password=formData.get("password")
+
+       console.log("password : ", password)
    try{
     const res= await apiRequest.post("/auth/register",{
         username,email,password

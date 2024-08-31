@@ -13,6 +13,9 @@ import Login from './Pages/login/login.jsx';
 import ProfileUpdate from './Pages/updateProfilePage/profileUpdate.jsx';
 import NewPostPage from './Pages/AddNewPost/NewPostPage.jsx';
 import { ListPageLoader, profilePageLoader, SinglePageLoader } from './lib/loader.js';
+import About from './Pages/About/About.jsx';
+import Contact from './Pages/Contact/Contact.jsx';
+import Agents from './Pages/Agents/Agents.jsx';
 
 export default function App() {
 
@@ -24,6 +27,18 @@ export default function App() {
          {
           path:"/",
           element: <HomePage/>
+         }, 
+         {
+          path:"/about",
+          element: <About/>
+         }, 
+         {
+          path:"/contact",
+          element: <Contact/>
+         }, 
+         {
+          path:"/agents",
+          element: <Agents/>
          }, 
          {
           path:"/list",

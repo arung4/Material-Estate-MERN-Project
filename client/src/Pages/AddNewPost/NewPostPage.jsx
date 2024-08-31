@@ -17,7 +17,6 @@ export default function NewPostPage() {
     e.preventDefault();
     const formData = new FormData(e.target);
     const inputs = Object.fromEntries(formData);
-
     try {
       const res = await apiRequest.post("/posts/", {
         postData: {
@@ -25,7 +24,7 @@ export default function NewPostPage() {
           price: parseInt(inputs.price),
           images: images,
           address: inputs.address,
-          city: inputs.city.toLowerCase(),
+          city: inputs.city.toLowerCase().trim(),
           bedroom: parseInt(inputs.bedroom),
           bathroom: parseInt(inputs.bathroom),
           type: inputs.type === 'any' ? undefined : inputs.type ,
