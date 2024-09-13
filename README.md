@@ -9,5 +9,13 @@
 ![My list](https://github.com/user-attachments/assets/f78bbae0-1ea6-48ed-8745-f2cc973df98f)
 ![Saved list](https://github.com/user-attachments/assets/de72be72-4188-4be7-9822-cea7575dcc52)
 ![Single list page](https://github.com/user-attachments/assets/fd982180-06ea-4a3f-bbd5-9b869952c4cc)
-![Single list page -2](https://gith![Uploading add new Post-1.jpg…]()
-ub.com/user-attachments/assets/1e5b6c90-facd-450c-bd11-735c86d6522a)
+![Single list page -2](https://github.com/user-attachments/assets/0331f3ce-eb20-4563-b0e9-deeeef686e19)
+![add new Post-1](https://github.com/user-attachments/assets/b4b82a2f-ed73-47ce-ab2d-97a455310534)
+
+![add new post-2](https://github.com/user-attachments/assets/fed92462-f135-41b7-8927-b073d8b42ef2)
+![chats](https://github.com/user-attachments/assets/e8e28611-cdd7-46ee-8ef0-44e5e3beb033)
+![chats-2](https://github.com/user-attachments/assets/06a276a8-199c-4e00-80f5-48980cf189b9)
+
+![Notification](https://github.com/user-attachments/assets/ad7b3ded-8df7-4b09-8bcb-371007fc033d)
+
+
